@@ -1,5 +1,5 @@
 #########################################################################################
-#  This file is part of the Open Source Ecology D3D 3D Printer Workbench for FreeCAD.
+#  This file is part of the FreeCAD_Workbench_Starter project.
 #
 #  Copyright (C) 2017 Stephen Kaiser <freesol29|at|gmail.com>
 #
@@ -20,20 +20,18 @@
 #########################################################################################
 #!/usr/bin/python
 
-class D3DWorkbench (Workbench):
+class ExampleWorkbench (Workbench):
 
-    MenuText = "D3D Printer Workbench"
-    ToolTip = "A workbench for designing D3D 3D printers by Open Source Ecology"
+    MenuText = "Example Workbench"
+    ToolTip = "An example workbench"
     #Icon = """paste here the contents of a 16x16 xpm icon"""
 
     def Initialize(self):
         "This function is executed when FreeCAD starts"
-        import AddFrame # import here all the needed files that create your FreeCAD commands
-        self.list = ["AddFrame"] # A list of command names created in the line above
+        import MyCommandButton # import here all the needed files that create your FreeCAD commands
+        self.list = ["MyCommandButton"] # A list of command names created in the line above
         self.appendToolbar("D3D", self.list) # creates a new toolbar with your commands
-        #FreeCADGui.addIconPath( ':/d3d/icons' )
-        #FreeCADGui.addPreferencePage( ':/d3d/ui/assembly2_prefs.ui','Assembly2' )
-        self.appendMenu("Design Menu", self.list) # creates a new menu
+        self.appendMenu("Command Menu", self.list) # creates a new menu
         #self.appendMenu(["An existing Menu", "My submenu"], self.list) # appends a submenu to an existing menu
 
     def Activated(self):
@@ -53,4 +51,4 @@ class D3DWorkbench (Workbench):
         # this function is mandatory if this is a full python workbench
         return "Gui::PythonWorkbench"
        
-Gui.addWorkbench(D3DWorkbench())
+Gui.addWorkbench(ExampleWorkbench())

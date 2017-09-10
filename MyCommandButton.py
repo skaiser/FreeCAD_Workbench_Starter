@@ -1,5 +1,5 @@
 #########################################################################################
-#  This file is part of the Open Source Ecology D3D 3D Printer Workbench for FreeCAD.
+#  This file is part of the FreeCAD_Workbench_Starter project.
 #
 #  Copyright (C) 2017 Stephen Kaiser <freesol29|at|gmail.com>
 #
@@ -28,7 +28,7 @@ import os, FindIconPath
 path_D3D = os.path.dirname(FindIconPath.__file__)
 path_D3D_icons =  os.path.join(path_D3D, 'icons')
 
-class AddFrameClass():
+class MyCommandButtonClass():
     """Command to add the printer frame"""
 
     def GetResources(self):
@@ -38,10 +38,8 @@ class AddFrameClass():
                 'ToolTip' : "Adds a D3D printer frame"}
 
     def Activated(self):
-        "Do something here"
-        # See here for opening dialog to choose part to import 
-        # https://github.com/hamish2014/FreeCAD_assembly2/blob/master/importPart.py#L125
-        FreeCAD.Console.PrintMessage("D3D Printer workbench is working!")
+        "Do something here when button is clicked"
+        FreeCAD.Console.PrintMessage("Workbench is working!")
         if Gui.ActiveDocument == None:
             FreeCAD.newDocument()
 #        view = Gui.activeDocument().activeView()
@@ -59,4 +57,4 @@ class AddFrameClass():
         are met or not. This function is optional."""
         return True
 
-Gui.addCommand('AddFrame', AddFrameClass()) 
+Gui.addCommand('MyCommandButton', MyCommandButtonClass()) 
