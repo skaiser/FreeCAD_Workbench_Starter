@@ -1,17 +1,18 @@
-# D3D-Printer-Workbench
-
-[Requirements slide deck](http://opensourceecology.org/wiki/D3D_Workbench_in_FreeCAD)
-
-[Initial project overview video](https://www.youtube.com/watch?v=HadgIABxLv4)
+# FreeCAD_Workbench_Starter
+Example for getting a basic FreeCAD workbench started
 
 [Python Style Guide](https://www.python.org/dev/peps/pep-0008/)
 
-[Clone and install repo/workbench](https://www.freecadweb.org/wiki/How_to_install_additional_workbenches)
+
+## Installation
+[See](https://www.freecadweb.org/wiki/How_to_install_additional_workbenches)
+
+### Linux
 
 ````
 $ mkdir ~/.FreeCAD/Mod
 $ cd ~/.FreeCAD/Mod
-$ git clone https://github.com/skaiser/D3D-Printer-Workbench.git
+$ git clone https://github.com/skaiser/FreeCAD_Workbench_Starter.git
 ````
 
 Create a soft link in your home directory to make it easier to add things like icons from the file browser windows.
