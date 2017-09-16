@@ -20,16 +20,16 @@
 #########################################################################################
 #!/usr/bin/python
 
-class ExampleWorkbench (Workbench):
+class OSE_ExampleWorkbench (Workbench):
 
-    MenuText = "Example Workbench"
-    ToolTip = "An example workbench"
+    MenuText = "OSE Example Workbench"
+    ToolTip = "An example workbench for Open Source Ecology part design"
     #Icon = """paste here the contents of a 16x16 xpm icon"""
 
     def Initialize(self):
         "This function is executed when FreeCAD starts"
-        import MyCommandButton # import here all the needed files that create your FreeCAD commands
-        self.list = ["MyCommandButton"] # A list of command names created in the line above
+        import OSE_CommandButton # import here all the needed files that create your FreeCAD commands
+        self.list = ["OSE_CommandButton"] # A list of command names created in the line above
         self.appendToolbar("D3D", self.list) # creates a new toolbar with your commands
         self.appendMenu("Command Menu", self.list) # creates a new menu
         #self.appendMenu(["An existing Menu", "My submenu"], self.list) # appends a submenu to an existing menu
@@ -51,4 +51,4 @@ class ExampleWorkbench (Workbench):
         # this function is mandatory if this is a full python workbench
         return "Gui::PythonWorkbench"
        
-Gui.addWorkbench(ExampleWorkbench())
+Gui.addWorkbench(OSE_ExampleWorkbench())

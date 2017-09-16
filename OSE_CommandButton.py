@@ -24,15 +24,15 @@ import FreeCAD, Part
 from FreeCAD import Gui
 
 # Locate Workbench Directory
-import os, FindIconPath
-path_D3D = os.path.dirname(FindIconPath.__file__)
-path_D3D_icons =  os.path.join(path_D3D, 'icons')
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ICON_DIR =  os.path.join(BASE_DIR, 'FreeCAD_Workbench_Starter/icons')
 
-class MyCommandButtonClass():
+class OSE_CommandButtonClass():
     """Command to add the printer frame"""
 
     def GetResources(self):
-        return {'Pixmap'  : path_D3D_icons + '/DrawStyleWireFrame.svg', # the name of a svg file available in the resources
+        return {'Pixmap'  : ICON_DIR + '/DrawStyleWireFrame.svg', # the name of a svg file available in the resources
                 'Accel' : "Shift+S", # a default shortcut (optional)
                 'MenuText': "Add a frame",
                 'ToolTip' : "Adds a D3D printer frame"}
@@ -57,4 +57,4 @@ class MyCommandButtonClass():
         are met or not. This function is optional."""
         return True
 
-Gui.addCommand('MyCommandButton', MyCommandButtonClass()) 
+Gui.addCommand('OSE_CommandButton', OSE_CommandButtonClass()) 
