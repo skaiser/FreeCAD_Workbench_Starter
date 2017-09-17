@@ -23,19 +23,14 @@
 #*                                                                         *
 #***************************************************************************
 
-import FreeCAD, Part
+import FreeCAD, Part, OSEBase
 from FreeCAD import Gui
-
-# Locate Workbench Directory
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ICON_DIR =  os.path.join(BASE_DIR, 'FreeCAD_Workbench_Starter/icons')
 
 class OSE_CommandButtonClass():
     """Command to add the printer frame"""
 
     def GetResources(self):
-        return {'Pixmap'  : ICON_DIR + '/DrawStyleWireFrame.svg', # the name of a svg file available in the resources
+        return {'Pixmap'  : OSEBase.ICON_PATH + '/DrawStyleWireFrame.svg', # the name of a svg file available in the resources
                 'Accel' : "Shift+S", # a default shortcut (optional)
                 'MenuText': "Add a frame",
                 'ToolTip' : "Adds a D3D printer frame"}
