@@ -34,7 +34,7 @@ class OSE_ExampleWorkbench (Workbench):
         "This function is executed when FreeCAD starts"
         import OSEBase, OSE_CommandButton # import here all the needed files that create your FreeCAD commands
         self.list = ["OSE_CommandButton"] # A list of command names created in the line above
-        self.appendToolbar("D3D", self.list) # creates a new toolbar with your commands
+        self.appendToolbar("OSE", self.list) # creates a new toolbar with your commands
         self.appendMenu("Command Menu", self.list) # creates a new menu
 
         #FreeCADGui.addIconPath(":/Resources/icons")
